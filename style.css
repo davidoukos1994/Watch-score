@@ -1,50 +1,30 @@
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#050607;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-body{min-height:100vh}
-.app{max-width:430px;margin:0 auto;padding:10px 8px 18px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
-.timer{display:flex;align-items:center;gap:6px;background:#101318;border:1px solid #262b33;border-radius:16px;padding:7px 9px}
-#clock{font-size:26px;font-weight:800;letter-spacing:.5px}
-button{border:0;border-radius:14px;background:#1f6feb;color:#fff;font-weight:800;font-size:15px;padding:10px 12px}
-button:active{transform:scale(.97)}
-.small{font-size:14px;padding:8px 10px;background:#222934}
-.danger{background:#b4232a}
-.setup{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:7px 0}
-.setup button{grid-column:1/3;background:#238636}
-input{width:100%;border:1px solid #30363d;background:#0d1117;color:#fff;border-radius:13px;padding:10px 8px;font-size:16px;font-weight:700;text-align:center}
-.scoreboard{display:grid;grid-template-columns:1fr 22px 1fr;gap:6px;align-items:start}
-.team{background:#0d1117;border:1px solid #30363d;border-radius:20px;padding:8px 6px;text-align:center}
-.teamName{font-size:14px;padding:8px 4px;margin-bottom:5px}
-.score{font-size:58px;line-height:1;font-weight:900;margin:6px 0 8px}
-.vs{font-size:32px;font-weight:900;text-align:center;margin-top:58px;color:#8b949e}
-.goal{width:100%;background:#2ea043;font-size:18px;padding:12px 6px;margin-bottom:7px}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:5px}
-.cards button{background:#24292f;padding:9px 3px;font-size:18px}
-.logWrap{margin-top:10px;background:#0d1117;border:1px solid #30363d;border-radius:18px;padding:8px}
-h2{font-size:16px;margin:0 0 6px;color:#c9d1d9}
-.log{max-height:190px;overflow:auto;font-size:14px}
-.entry{padding:7px 6px;border-bottom:1px solid #21262d;color:#e6edf3}
-.entry:last-child{border-bottom:0}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:15px}
-.hidden{display:none}
-.box{width:100%;max-width:310px;background:#0d1117;border:1px solid #30363d;border-radius:22px;padding:14px}
-.box h3{margin:0 0 10px;text-align:center}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-
-@media (max-width:230px){
-  .app{padding:6px 5px}
-  #clock{font-size:20px}
-  button{font-size:13px;padding:8px 6px;border-radius:12px}
-  input{font-size:13px;padding:8px 4px}
-  .scoreboard{grid-template-columns:1fr 14px 1fr;gap:3px}
-  .team{padding:6px 4px;border-radius:16px}
-  .teamName{font-size:11px}
-  .score{font-size:42px}
-  .goal{font-size:13px}
-  .vs{font-size:20px;margin-top:52px}
-  .cards button{font-size:14px;padding:7px 1px}
-  h2{font-size:13px}
-  .log{font-size:12px;max-height:120px}
-  .setup{grid-template-columns:1fr;gap:5px}
-  .setup button{grid-column:1}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #050505; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif; }
+body { min-height: 100vh; }
+.app { max-width: 420px; margin: 0 auto; padding: 10px; }
+.card { background: #121212; border: 1px solid #292929; border-radius: 22px; padding: 14px; }
+h1 { font-size: 24px; margin: 0 0 12px; text-align: center; }
+h2 { font-size: 16px; margin: 12px 0 8px; }
+label { display: block; margin: 10px 0 5px; font-size: 13px; color: #bdbdbd; }
+input { width: 100%; border: 0; border-radius: 14px; padding: 12px; font-size: 16px; background: #252525; color: #fff; outline: none; }
+button { border: 0; border-radius: 16px; padding: 12px 10px; font-size: 15px; font-weight: 700; background: #303030; color: #fff; cursor: pointer; }
+button:active { transform: scale(.98); }
+.primary { width: 100%; margin-top: 14px; background: #16a34a; }
+.hidden { display: none; }
+.scoreboard { display: grid; grid-template-columns: 1fr 18px 1fr; gap: 6px; align-items: start; }
+.team { background: #121212; border: 1px solid #292929; border-radius: 20px; padding: 8px; text-align: center; min-width: 0; }
+.name { font-size: 13px; min-height: 32px; display: flex; align-items: center; justify-content: center; overflow-wrap: anywhere; color: #e8e8e8; }
+.score { font-size: 52px; font-weight: 900; line-height: 1; margin: 6px 0; }
+.dash { align-self: center; text-align: center; font-size: 25px; color: #aaa; padding-top: 35px; }
+.scorer { font-size: 13px; padding: 9px; border-radius: 12px; margin-bottom: 7px; text-align: center; }
+.goal { width: 100%; background: #0a84ff; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.log { margin: 0; padding-left: 22px; font-size: 13px; color: #ddd; }
+.log li { margin: 5px 0; }
+@media (max-width: 220px) {
+  .app { padding: 6px; }
+  .scoreboard { grid-template-columns: 1fr; }
+  .dash { display: none; }
+  .score { font-size: 44px; }
+  .actions { grid-template-columns: 1fr; }
 }

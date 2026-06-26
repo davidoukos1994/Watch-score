@@ -1,68 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Score" />
   <title>Watch Score</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="app">
-    <section class="top">
-      <div class="timer">
-        <span id="clock">00:00</span>
-        <button id="timerBtn" class="small">▶</button>
-      </div>
-      <button id="resetBtn" class="small danger">Νέος</button>
+    <section id="setup" class="card">
+      <h1>⚽ Σκορ</h1>
+      <label>Ομάδα Α</label>
+      <input id="teamAInput" placeholder="Ολυμπιακός" autocomplete="off" />
+      <label>Ομάδα Β</label>
+      <input id="teamBInput" placeholder="Παναθηναϊκός" autocomplete="off" />
+      <button id="startBtn" class="primary">Έναρξη 0-0</button>
     </section>
 
-    <section class="setup" id="setup">
-      <input id="teamAInput" placeholder="Ομάδα Α" value="Ολυμπιακός" />
-      <input id="teamBInput" placeholder="Ομάδα Β" value="Παναθηναϊκός" />
-      <button id="startBtn">Έναρξη αγώνα</button>
-    </section>
+    <section id="game" class="hidden">
+      <div class="scoreboard">
+        <div class="team">
+          <div id="teamAName" class="name">Ομάδα Α</div>
+          <div id="scoreA" class="score">0</div>
+          <input id="scorerA" class="scorer" placeholder="Σκόρερ" autocomplete="off" />
+          <button id="goalA" class="goal">+ Γκολ</button>
+        </div>
 
-    <section class="scoreboard">
-      <div class="team">
-        <input id="teamAName" class="teamName" value="Ολυμπιακός" />
-        <div id="scoreA" class="score">0</div>
-        <button id="goalA" class="goal">+ Γκολ</button>
-        <div class="cards">
-          <button id="yellowA">🟨</button>
-          <button id="redA">🟥</button>
+        <div class="dash">-</div>
+
+        <div class="team">
+          <div id="teamBName" class="name">Ομάδα Β</div>
+          <div id="scoreB" class="score">0</div>
+          <input id="scorerB" class="scorer" placeholder="Σκόρερ" autocomplete="off" />
+          <button id="goalB" class="goal">+ Γκολ</button>
         </div>
       </div>
 
-      <div class="vs">-</div>
-
-      <div class="team">
-        <input id="teamBName" class="teamName" value="Παναθηναϊκός" />
-        <div id="scoreB" class="score">0</div>
-        <button id="goalB" class="goal">+ Γκολ</button>
-        <div class="cards">
-          <button id="yellowB">🟨</button>
-          <button id="redB">🟥</button>
-        </div>
+      <div class="actions">
+        <button id="undoBtn">↩ Undo</button>
+        <button id="resetBtn">Νέο</button>
       </div>
-    </section>
 
-    <section class="logWrap">
-      <h2>Γκολ / Κάρτες</h2>
-      <div id="log" class="log"></div>
+      <h2>Σκόρερ</h2>
+      <ol id="log" class="log"></ol>
     </section>
   </main>
-
-  <div id="modal" class="modal hidden">
-    <div class="box">
-      <h3 id="modalTitle">Σκόρερ</h3>
-      <input id="scorerInput" placeholder="Όνομα σκόρερ" />
-      <div class="row">
-        <button id="saveScorer">OK</button>
-        <button id="cancelScorer" class="danger">Άκυρο</button>
-      </div>
-    </div>
-  </div>
-
   <script src="app.js"></script>
 </body>
 </html>
