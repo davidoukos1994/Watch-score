@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Score" />
+  <title>Watch Score</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="setup" class="card">
+      <h1>⚽ Σκορ</h1>
+      <label>Ομάδα Α</label>
+      <input id="teamAInput" placeholder="Ολυμπιακός" autocomplete="off" />
+      <label>Ομάδα Β</label>
+      <input id="teamBInput" placeholder="Παναθηναϊκός" autocomplete="off" />
+      <button id="startBtn" class="primary">Έναρξη 0-0</button>
+    </section>
+
+    <section id="game" class="hidden">
+      <div class="scoreboard">
+        <div class="team">
+          <div id="teamAName" class="name">Ομάδα Α</div>
+          <div id="scoreA" class="score">0</div>
+          <input id="scorerA" class="scorer" placeholder="Σκόρερ" autocomplete="off" />
+          <button id="goalA" class="goal">+ Γκολ</button>
+        </div>
+
+        <div class="dash">-</div>
+
+        <div class="team">
+          <div id="teamBName" class="name">Ομάδα Β</div>
+          <div id="scoreB" class="score">0</div>
+          <input id="scorerB" class="scorer" placeholder="Σκόρερ" autocomplete="off" />
+          <button id="goalB" class="goal">+ Γκολ</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="undoBtn">↩ Undo</button>
+        <button id="resetBtn">Νέο</button>
+      </div>
+
+      <h2>Σκόρερ</h2>
+      <ol id="log" class="log"></ol>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

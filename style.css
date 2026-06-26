@@ -1,0 +1,30 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #050505; color: #fff; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif; }
+body { min-height: 100vh; }
+.app { max-width: 420px; margin: 0 auto; padding: 10px; }
+.card { background: #121212; border: 1px solid #292929; border-radius: 22px; padding: 14px; }
+h1 { font-size: 24px; margin: 0 0 12px; text-align: center; }
+h2 { font-size: 16px; margin: 12px 0 8px; }
+label { display: block; margin: 10px 0 5px; font-size: 13px; color: #bdbdbd; }
+input { width: 100%; border: 0; border-radius: 14px; padding: 12px; font-size: 16px; background: #252525; color: #fff; outline: none; }
+button { border: 0; border-radius: 16px; padding: 12px 10px; font-size: 15px; font-weight: 700; background: #303030; color: #fff; cursor: pointer; }
+button:active { transform: scale(.98); }
+.primary { width: 100%; margin-top: 14px; background: #16a34a; }
+.hidden { display: none; }
+.scoreboard { display: grid; grid-template-columns: 1fr 18px 1fr; gap: 6px; align-items: start; }
+.team { background: #121212; border: 1px solid #292929; border-radius: 20px; padding: 8px; text-align: center; min-width: 0; }
+.name { font-size: 13px; min-height: 32px; display: flex; align-items: center; justify-content: center; overflow-wrap: anywhere; color: #e8e8e8; }
+.score { font-size: 52px; font-weight: 900; line-height: 1; margin: 6px 0; }
+.dash { align-self: center; text-align: center; font-size: 25px; color: #aaa; padding-top: 35px; }
+.scorer { font-size: 13px; padding: 9px; border-radius: 12px; margin-bottom: 7px; text-align: center; }
+.goal { width: 100%; background: #0a84ff; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.log { margin: 0; padding-left: 22px; font-size: 13px; color: #ddd; }
+.log li { margin: 5px 0; }
+@media (max-width: 220px) {
+  .app { padding: 6px; }
+  .scoreboard { grid-template-columns: 1fr; }
+  .dash { display: none; }
+  .score { font-size: 44px; }
+  .actions { grid-template-columns: 1fr; }
+}
